@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
@@ -20,7 +20,7 @@
   a{color:inherit;text-decoration:none}
   .container{max-width:1180px;margin:0 auto;padding:0 24px}
 
-  /* ===== HEADER ===== */
+  /* HEADER */
   .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 0;transition:all .35s;background:rgba(15,36,27,0)}
   .header.scrolled{background:rgba(15,36,27,.96);padding:12px 0;box-shadow:0 6px 24px rgba(0,0,0,.25);backdrop-filter:blur(10px)}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -34,7 +34,7 @@
   .nav-cta{padding:10px 20px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff !important;border-radius:30px;font-size:14px;font-weight:700;box-shadow:0 6px 18px rgba(156,122,52,.35)}
   .burger{display:none;background:none;border:none;color:var(--gold-soft);font-size:24px;cursor:pointer}
 
-  /* ===== HERO ===== */
+  /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(180deg,rgba(15,36,27,.7) 0%,rgba(15,36,27,.85) 100%),url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;color:#fff;text-align:center;padding:120px 24px 80px}
   .hero-inner{max-width:820px;margin:0 auto}
   .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border:1px solid rgba(201,162,83,.6);border-radius:30px;color:var(--gold-soft);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;font-weight:600}
@@ -57,7 +57,7 @@
   .divider::before{left:-14px}
   .divider::after{right:-14px}
 
-  /* ===== ABOUT ===== */
+  /* ABOUT */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
   .about-img{border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(23,50,38,.2);position:relative;aspect-ratio:4/5;background:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=80') center/cover}
   .about-img::after{content:'';position:absolute;inset:20px;border:1.5px solid rgba(201,162,83,.6);border-radius:14px;pointer-events:none}
@@ -68,7 +68,7 @@
   .stat .num{font-family:'Playfair Display',serif;font-size:32px;font-weight:800;color:var(--gold-deep);display:block}
   .stat .lbl{font-size:13px;color:var(--muted);font-weight:600}
 
-  /* ===== SERVICES ===== */
+  /* SERVICES */
   .services{background:#fff}
   .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
   .service-card{padding:38px 30px;background:var(--cream);border-radius:18px;transition:all .3s;text-align:center}
@@ -77,7 +77,7 @@
   .service-card h3{font-size:22px;color:var(--forest);margin-bottom:10px}
   .service-card p{color:var(--muted);font-size:15px}
 
-  /* ===== BOOKING FORM ===== */
+  /* BOOKING */
   .booking{background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)}
   .booking-wrap{max-width:760px;margin:0 auto;background:#fff;border:1px solid rgba(201,162,83,.35);border-radius:22px;padding:48px 44px;box-shadow:0 30px 80px rgba(23,50,38,.1)}
   .booking-wrap h2{font-size:clamp(26px,4vw,38px);color:var(--forest);text-align:center;margin-bottom:8px}
@@ -107,7 +107,33 @@
   .booked-warning{display:none;margin-top:10px;padding:12px 14px;background:#FDECEC;border:1.5px solid #E39A9A;border-radius:12px;color:#a13333;font-size:14px;font-weight:600}
   .booked-warning.show{display:block}
 
-  /* ===== ADMIN PANEL ===== */
+  /* CHECK STATUS */
+  .check-status{max-width:760px;margin:32px auto 0;background:#fff;border:1px solid rgba(201,162,83,.35);border-radius:18px;padding:32px 36px;box-shadow:0 15px 40px rgba(23,50,38,.07)}
+  .check-status h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--forest);margin-bottom:8px;text-align:center}
+  .check-status p{color:var(--muted);font-size:14px;text-align:center;margin:0 0 20px}
+  .check-row{display:flex;gap:10px}
+  .check-row input{flex:1;padding:14px 16px;border:1.5px solid #e3dccd;border-radius:12px;font-family:inherit;font-size:15px;outline:none;transition:all .2s}
+  .check-row input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,83,.15)}
+  .check-row button{padding:14px 26px;background:var(--forest);color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+  .check-row button:hover{background:var(--forest-2);transform:translateY(-2px)}
+  .check-result{margin-top:18px;border-radius:12px;font-size:14px;display:none}
+  .check-result.show{display:block}
+  .check-result .item{padding:16px 18px;margin-bottom:10px;border-radius:12px;border-left:5px solid var(--gold);background:#F7F1E4}
+  .check-result .item:last-child{margin-bottom:0}
+  .check-result .item.pending{background:#FFF7E6;border-left-color:#E4CE93}
+  .check-result .item.confirmed{background:#E9F7EF;border-left-color:#2E9E63}
+  .check-result .item.rejected{background:#FDECEC;border-left-color:#E39A9A}
+  .check-result .item .status-title{font-size:15px;font-weight:800;display:block;margin-bottom:8px}
+  .check-result .item.pending .status-title{color:#8a6a1f}
+  .check-result .item.confirmed .status-title{color:#1d6e44}
+  .check-result .item.rejected .status-title{color:#a13333}
+  .check-result .item .row{display:flex;justify-content:space-between;font-size:13px;color:#5a5044;margin:4px 0}
+  .check-result .item .row b{color:var(--ink)}
+  .check-result .item small{display:block;margin-top:10px;color:#8a8175;font-size:12px;border-top:1px dashed rgba(201,162,83,.3);padding-top:8px}
+  .check-result .empty-msg{padding:16px;border-radius:12px;text-align:center;background:#FFF7E6;color:#8a6a1f;font-weight:600}
+  .check-result .empty-msg a{color:inherit;text-decoration:underline}
+
+  /* ADMIN PANEL */
   .admin-panel{display:none;max-width:1100px;margin:40px auto 0;background:var(--forest-2);color:var(--cream);border-radius:18px;padding:28px;box-shadow:0 30px 80px rgba(15,36,27,.35)}
   .admin-panel.show{display:block}
   .admin-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
@@ -135,7 +161,7 @@
   .btn-no{background:#E39A9A;color:#fff}
   .btn-del{background:transparent;color:var(--gold-soft);border:1px solid var(--gold-soft)}
 
-  /* ===== ADMIN LOGIN ===== */
+  /* ADMIN LOGIN */
   .admin-link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 18px;background:transparent;border:1.5px solid rgba(201,162,83,.4);border-radius:30px;color:var(--gold-soft);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s}
   .admin-link:hover{background:rgba(201,162,83,.12);border-color:var(--gold);color:var(--gold)}
   .admin-modal{display:none;position:fixed;inset:0;z-index:999;background:rgba(15,36,27,.85);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
@@ -155,7 +181,7 @@
   .btn-login{width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;border:none;border-radius:12px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(156,122,52,.3)}
   .btn-login:hover{transform:translateY(-2px)}
 
-  /* ===== FOOTER ===== */
+  /* FOOTER */
   .contact{background:var(--forest-2);color:var(--cream);padding:80px 0 40px}
   .contact-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:50px}
   .contact h4{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold-soft);margin-bottom:16px}
@@ -188,6 +214,8 @@
     .contact-grid{grid-template-columns:1fr;gap:32px}
     .admin-panel{padding:20px 14px}
     .admin-stats{grid-template-columns:1fr 1fr}
+    .check-row{flex-direction:column}
+    .check-status{padding:24px 20px}
   }
 </style>
 </head>
@@ -201,6 +229,7 @@
       <li><a href="#about">Biz haqimizda</a></li>
       <li><a href="#services">Xizmatlar</a></li>
       <li><a href="#booking">Bron qilish</a></li>
+      <li><a href="#check">Holatni tekshirish</a></li>
       <li><a href="tel:+998945118008" class="nav-cta">📞 +998 94 511 80 08</a></li>
     </ul>
     <button class="burger" id="burger"><i class="fa-solid fa-bars"></i></button>
@@ -327,6 +356,19 @@
       </form>
     </div>
 
+    <!-- ============ SO'ROV HOLATINI TEKSHIRISH ============ -->
+    <div class="check-status" id="check">
+      <h3>🔍 So'rov holatini tekshirish</h3>
+      <p>Bron qilganingizda kiritgan telefon raqamingizni yozing — holatini ko'rasiz</p>
+      <div class="check-row">
+        <input type="tel" id="checkPhone" placeholder="+998 90 123 45 67">
+        <button onclick="checkMyStatus()">
+          <i class="fa-solid fa-magnifying-glass"></i> Tekshirish
+        </button>
+      </div>
+      <div class="check-result" id="checkResult"></div>
+    </div>
+
     <!-- ADMIN PANEL -->
     <div class="admin-panel" id="adminPanel">
       <div class="admin-head">
@@ -417,16 +459,16 @@
      ============================================================ */
   const STORAGE     = "shukrona_bookings_v1";
   const SESSION_KEY = "sx_admin_sess";
-  const SESSION_TTL = 30 * 60 * 1000;   // 30 daqiqa
+  const SESSION_TTL = 30 * 60 * 1000;
   const LOCK_KEY    = "sx_lock";
   const ATT_KEY     = "sx_att";
   const MAX_ATT     = 5;
-  const LOCK_TIME   = 60 * 1000;        // 1 daqiqa
+  const LOCK_TIME   = 60 * 1000;
 
   /* ============================================================
-     PAROL (kodda "Shukrona_8694" ko'rinmaydi)
+     PAROL — Shukrona_8694 (kodda ko'rinmaydi)
      ============================================================ */
-  const _v = [94,124,110,73,91,95,89,95,26,116,97,99,85];
+  const _v = [94,124,110,73,91,95,89,95,26,116,101,99,85];
   const _k = i => (i * 7 + 13) % 128;
   function _check(input){
     if (typeof input !== "string" || input.length !== _v.length) return false;
@@ -482,12 +524,18 @@
     saveBookings(all);
 
     showStatus("pending", "So'rovingiz yuborildi ✓",
-      `Rahmat, ${data.name}! Administrator tasdiqlagach, shu vaqt sizga band qilinadi.`);
+      `Rahmat, ${data.name}! Administrator tasdiqlagach, shu vaqt sizga band qilinadi.<br>
+       <small>Holatni quyidagi <b>"🔍 So'rov holatini tekshirish"</b> bo'limida ko'rishingiz mumkin.</small>`);
 
     f.reset();
     f.phone.value = "+998";
     document.getElementById("bookedWarning").classList.remove("show");
     if (document.getElementById("adminPanel").classList.contains("show")) renderAdmin();
+
+    /* Avtomatik ravishda holat tekshirish maydoniga raqamni qo'yamiz */
+    setTimeout(() => {
+      document.getElementById("checkPhone").value = data.phone;
+    }, 300);
   };
 
   function showStatus(type, title, text){
@@ -508,6 +556,59 @@
       warn.classList.remove("show");
     }
   }
+
+  /* ============================================================
+     MIJOZ O'Z HOLATINI TEKSHIRADI
+     ============================================================ */
+  window.checkMyStatus = function(){
+    const phoneInput = document.getElementById("checkPhone");
+    const phone = phoneInput.value.trim().replace(/\s/g, "");
+    const res = document.getElementById("checkResult");
+
+    res.className = "check-result";
+    res.innerHTML = "";
+
+    if (!phone || phone.length < 9) {
+      res.classList.add("show");
+      res.innerHTML = `<div class="empty-msg">❗ Iltimos, to'liq telefon raqamingizni kiriting</div>`;
+      phoneInput.focus();
+      return;
+    }
+
+    const myBookings = loadBookings()
+      .filter(b => b.phone.replace(/\s/g, "") === phone)
+      .sort((a,b) => b.createdAt.localeCompare(a.createdAt));
+
+    if (myBookings.length === 0) {
+      res.classList.add("show");
+      res.innerHTML = `
+        <div class="empty-msg">
+          ❔ Bu raqam bilan so'rov topilmadi.<br>
+          <small style="font-weight:400">Raqamni tekshiring yoki <a href="tel:+998945118008">+998 94 511 80 08</a> ga qo'ng'iroq qiling</small>
+        </div>`;
+      return;
+    }
+
+    const statusMap = {
+      pending:   { icon:"⏳", text:"Kutilmoqda",   cls:"pending" },
+      confirmed: { icon:"✅", text:"Tasdiqlangan", cls:"confirmed" },
+      rejected:  { icon:"❌", text:"Rad etilgan",  cls:"rejected" }
+    };
+
+    res.classList.add("show");
+    res.innerHTML = myBookings.map(b => {
+      const s = statusMap[b.status];
+      return `
+        <div class="item ${s.cls}">
+          <span class="status-title">${s.icon} ${s.text}</span>
+          <div class="row"><span>📅 Sana:</span><b>${b.date}</b></div>
+          <div class="row"><span>🕐 Vaqt:</span><b>${b.time}</b></div>
+          <div class="row"><span>👥 Mehmonlar:</span><b>${b.guests}</b></div>
+          <small>Yuborilgan: ${new Date(b.createdAt).toLocaleString("uz-UZ")}</small>
+        </div>
+      `;
+    }).join("");
+  };
 
   /* ============================================================
      ADMIN — Login / Logout
@@ -615,7 +716,6 @@
     let list = loadBookings().sort((a,b) => b.createdAt.localeCompare(a.createdAt));
     const search = (document.getElementById("adminSearch")?.value || "").toLowerCase().trim();
 
-    /* Statistika */
     document.getElementById("statPending").textContent   = list.filter(b => b.status === "pending").length;
     document.getElementById("statConfirmed").textContent = list.filter(b => b.status === "confirmed").length;
     document.getElementById("statRejected").textContent  = list.filter(b => b.status === "rejected").length;
@@ -707,6 +807,11 @@
     const dateInput = document.getElementById("date");
     if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
 
+    /* Enter tugmasi bilan holat tekshirish */
+    document.getElementById("checkPhone")?.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") checkMyStatus();
+    });
+
     /* Sessiya faol bo'lsa — panel avtomatik ochiladi */
     if (isSessionValid()) showAdminPanel();
 
@@ -718,7 +823,7 @@
       }
     });
 
-    /* Har 1 daqiqada sessiyani tekshirish */
+    /* Sessiyani tekshirish */
     setInterval(() => {
       if (document.getElementById("adminPanel").classList.contains("show") && !isSessionValid()) {
         logoutAdmin();

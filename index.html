@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shukrona To'yxonasi — Tantanangiz uchun eng go'zal joy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cloudflare.com">
 <style>
   :root{
     --ink:#20140D;
@@ -46,7 +46,7 @@
   .noise::before{
     content:"";
     position:absolute; inset:0;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
     pointer-events:none;
     mix-blend-mode:overlay;
   }
@@ -82,10 +82,9 @@
   nav.links a:hover::after{ width:100%; }
   .nav-cta{
     background:var(--gold); color:var(--forest-2); padding:10px 22px; border-radius:999px;
-    font-weight:800; font-size:13.5px; letter-spacing:.02em;
+    font-weight:800; font-size:13.5px; letter-spacing:.02em; cursor: pointer;
     box-shadow:0 8px 20px rgba(201,162,83,.35);
   }
-  .burger{ display:none; color:var(--cream); font-size:22px; }
 
   /* ---------- hero ---------- */
   .hero{
@@ -160,7 +159,7 @@
     border:1.4px solid rgba(247,241,228,.35); color:var(--cream);
     padding:16px 28px; border-radius:999px; font-weight:700; font-size:14.5px;
     display:inline-flex; align-items:center; gap:10px;
-    transition:.25s ease;
+    transition:.25s ease; cursor: pointer;
   }
   .btn-ghost:hover{ border-color:var(--gold); color:var(--gold-soft); }
   .hero-stats{
@@ -170,12 +169,6 @@
   .hero-stats h3{ font-size:30px; margin:0 0 4px; color:var(--gold-soft); }
   .hero-stats p{ margin:0; font-size:12.5px; color:rgba(247,241,228,.6); letter-spacing:.03em; }
 
-  .scrollcue{
-    position:absolute; left:6vw; bottom:34px; display:flex; align-items:center; gap:12px;
-    color:rgba(247,241,228,.55); font-size:12px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
-  }
-  .scrollcue .line{ width:1px; height:38px; background:linear-gradient(var(--gold), transparent); position:relative; overflow:hidden;}
-
   /* ---------- section shell ---------- */
   section{ padding:110px 6vw; position:relative; }
   .section-head{ max-width:640px; margin-bottom:64px; }
@@ -183,7 +176,7 @@
   .section-head p{ margin-top:16px; color:#5a4a3a; line-height:1.75; font-size:15.5px; max-width:56ch; }
   .divider-gold{ width:60px; height:2px; background:var(--gold); border-radius:2px; margin:6px 0 0; }
 
-  /* ---------- about section (Siz boshlagan joy) ---------- */
+  /* ---------- about section ---------- */
   .about{ background:var(--cream-2); }
   .about-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
@@ -192,10 +185,8 @@
   .about-text p{ font-size:16px; line-height:1.8; color:#4a3f35; margin-bottom:20px; }
   .about-img img{ width:100%; border-radius:15px; box-shadow: var(--shadow); border: 2px solid var(--gold); }
 
-  /* ---------- booking form and admin panel layouts ---------- */
-  .booking-section {
-    background: var(--cream);
-  }
+  /* ---------- booking form layout ---------- */
+  .booking-section { background: var(--cream); }
   .booking-wrapper {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -206,30 +197,12 @@
     box-shadow: var(--shadow);
     border: 1px solid var(--line);
   }
-  .booking-form-container h3 {
-    font-size: 28px;
-    color: var(--forest);
-    margin-bottom: 25px;
-  }
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .form-group.full-width {
-    grid-column: span 2;
-  }
-  .form-group label {
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--forest-2);
-  }
+  .booking-form-container h3 { font-size: 28px; color: var(--forest); margin-bottom: 25px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .form-group.full-width { grid-column: span 2; }
+  .form-group label { font-weight: 700; font-size: 14px; color: var(--forest-2); }
+  
   .form-group input, .form-group select {
     padding: 14px 18px;
     border: 1.5px solid var(--cream-2);
@@ -245,10 +218,7 @@
     border-color: var(--gold);
     background: white;
   }
-  .radio-tile-group {
-    display: flex;
-    gap: 15px;
-  }
+  .radio-tile-group { display: flex; gap: 15px; }
   .radio-tile {
     flex: 1;
     position: relative;
@@ -263,15 +233,9 @@
     font-weight: 600;
     transition: all 0.3s ease;
   }
-  .radio-tile input {
-    position: absolute;
-    opacity: 0;
-  }
-  .radio-tile.active-tile {
-    border-color: var(--gold);
-    background: var(--forest);
-    color: white;
-  }
+  .radio-tile input { position: absolute; opacity: 0; }
+  .radio-tile.active-tile { border-color: var(--gold); background: var(--forest); color: white; }
+  
   .booking-info-box {
     background: var(--forest);
     color: var(--cream);
@@ -279,4 +243,16 @@
     border-radius: 18px;
     display: flex;
     flex-direction: column;
-      
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .info-title { font-size: 24px; color: var(--gold-soft); margin-bottom: 20px; }
+  .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+  .info-item i { color: var(--gold); font-size: 20px; margin-top: 4px; }
+  .info-item a { font-size: 18px; font-weight: 700; color: var(--cream); }
+
+  /* Toast Notification */
+  .toast {
+    position: fixed; bottom: 30px; right: 30px; background: var(--forest);
+  

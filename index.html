@@ -1,297 +1,282 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al-Aziz To‘yxonasi - Band Qilish Tizimi</title>
-    <style>
-        :root {
-            --primary: #d4af37;
-            --dark: #1a1a1a;
-            --light: #f9f9f9;
-            --success: #2ecc71;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-        }
-        header {
-            background-color: var(--dark);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--primary);
-        }
-        header h1 {
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .btn {
-            background-color: var(--primary);
-            color: var(--dark);
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: white;
-            color: var(--dark);
-        }
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .page {
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-        h2 {
-            margin-bottom: 20px;
-            color: var(--dark);
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 10px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        input, select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-        input:focus, select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        .radio-group {
-            display: flex;
-            gap: 20px;
-            margin-top: 5px;
-        }
-        .radio-group label {
-            font-weight: normal;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .radio-group input {
-            width: auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: var(--dark);
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--dark);
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            font-size: 14px;
-        }
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .success-msg {
-            background-color: var(--success);
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            display: none;
-        }
-    </style>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shukrona To'yxonasi — Tantanangiz uchun eng go'zal joy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --ink:#20140D;
+    --forest:#173226;
+    --forest-2:#0F241B;
+    --gold:#C9A253;
+    --gold-soft:#E4CE93;
+    --gold-deep:#9C7A34;
+    --cream:#F7F1E4;
+    --cream-2:#EFE6D2;
+    --saffron:#B8492E;
+    --line: rgba(201,162,83,0.28);
+    --shadow: 0 30px 60px -30px rgba(15,36,27,0.55);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{ font-family:'Playfair Display',serif; }
+  .eyebrow{
+    font-family:'Manrope',sans-serif;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:700;
+    color:var(--gold-deep);
+  }
+  a{ text-decoration:none; color:inherit; }
 
-    <header>
-        <h1>Al-Aziz Hashamatli To‘yxonasi</h1>
-        <p>Sizning unutilmas kunigiz uchun eng yaxshi maskan</p>
-        <div class="nav-buttons">
-            <button class="btn" onclick="showPage('booking-page')">Joy Band Qilish</button>
-            <button class="btn" onclick="showPage('admin-page')">Admin Panel</button>
-        </div>
-    </header>
+  /* ---------- pattern & texture ---------- */
+  .noise::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events:none;
+    mix-blend-mode:overlay;
+  }
 
-    <div class="container">
-        <!-- Muofaqqiyatli xabar -->
-        <div id="success-alert" class="success-msg">
-            Tabriklaymiz! Joy muvaffaqiyatli band qilindi. Admin tez orada siz bilan bog'lanadi.
-        </div>
+  /* ---------- nav ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 6vw;
+    background:linear-gradient(180deg, rgba(23,50,38,0.92), rgba(23,50,38,0.0));
+    transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  header.nav.scrolled{
+    background:rgba(15,26,20,0.86);
+    backdrop-filter:blur(10px);
+    padding:12px 6vw;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+  }
+  .brand{ display:flex; align-items:center; gap:10px; color:var(--cream); }
+  .brand .mark{
+    width:38px;height:38px;border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold); font-size:16px;
+  }
+  .brand span{ font-family:'Playfair Display',serif; font-weight:700; font-size:20px; letter-spacing:.02em;}
+  nav.links{ display:flex; gap:34px; color:var(--cream-2); font-size:14.5px; font-weight:600;}
+  nav.links a{ position:relative; padding-bottom:3px; opacity:.9; cursor: pointer; }
+  nav.links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1.5px; background:var(--gold);
+    transition:width .3s ease;
+  }
+  nav.links a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--gold); color:var(--forest-2); padding:10px 22px; border-radius:999px;
+    font-weight:800; font-size:13.5px; letter-spacing:.02em;
+    box-shadow:0 8px 20px rgba(201,162,83,.35);
+  }
+  .burger{ display:none; color:var(--cream); font-size:22px; }
 
-        <!-- 1. JOY BAND QILISH SAHIFASI -->
-        <div id="booking-page" class="page active">
-            <h2>Onlayn Joy Band Qilish</h2>
-            <form id="booking-form" onsubmit="handleBooking(event)">
-                <div class="form-group">
-                    <label for="client-name">Ismingiz:</label>
-                    <input type="text" id="client-name" required placeholder="Masalan: Dilshodbek">
-                </div>
-                
-                <div class="form-group">
-                    <label for="booking-date">Sana:</label>
-                    <input type="date" id="booking-date" required>
-                </div>
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(1100px 700px at 82% -10%, rgba(201,162,83,0.18), transparent 60%),
+      radial-gradient(900px 600px at 8% 110%, rgba(184,73,46,0.16), transparent 55%),
+      linear-gradient(160deg, var(--forest-2) 0%, var(--forest) 55%, #12281F 100%);
+    color:var(--cream);
+    display:flex; align-items:center;
+    padding:150px 6vw 90px;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 20px 20px, rgba(201,162,83,.12) 1.4px, transparent 1.6px);
+    background-size:46px 46px;
+    opacity:.7;
+  }
+  .hero-arch{
+    position:absolute; right:-6%; top:8%;
+    width:46vw; max-width:640px; aspect-ratio:3/4.1;
+    border:1.5px solid rgba(201,162,83,.45);
+    border-radius:50% 50% 4% 4% / 34% 34% 4% 4%;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .hero-arch img{ width:100%; height:100%; object-fit:cover; filter:saturate(1.05) contrast(1.02); }
+  .hero-arch::before{
+    content:""; position:absolute; inset:14px;
+    border:1px solid rgba(244,230,190,.5);
+    border-radius:50% 50% 3% 3% / 32% 32% 3% 3%;
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.1fr .9fr; gap:40px; width:100%;
+    align-items:center;
+  }
+  .kicker{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--gold-soft); font-weight:700; font-size:12.5px; letter-spacing:.24em; text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .kicker .dash{ width:34px; height:1px; background:var(--gold); display:inline-block; }
+  .hero h1{
+    font-size:clamp(40px, 5.6vw, 78px);
+    line-height:1.03;
+    font-weight:700;
+    margin:0 0 22px;
+    max-width:14ch;
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-soft); font-weight:600; }
+  .hero p.lead{
+    font-size:17.5px; line-height:1.75; color:rgba(247,241,228,.82);
+    max-width:46ch; margin-bottom:36px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:54px; }
+  .btn-primary{
+    background:var(--gold); color:var(--forest-2); padding:16px 30px; border-radius:999px;
+    font-weight:800; font-size:14.5px; letter-spacing:.01em;
+    box-shadow:0 14px 30px rgba(201,162,83,.32);
+    display:inline-flex; align-items:center; gap:10px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    border:none; cursor:pointer;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 34px rgba(201,162,83,.42); }
+  .btn-ghost{
+    border:1.4px solid rgba(247,241,228,.35); color:var(--cream);
+    padding:16px 28px; border-radius:999px; font-weight:700; font-size:14.5px;
+    display:inline-flex; align-items:center; gap:10px;
+    transition:.25s ease;
+  }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold-soft); }
+  .hero-stats{
+    display:flex; gap:0; border-top:1px solid rgba(247,241,228,.18); padding-top:26px;
+  }
+  .hero-stats div{ flex:1; padding-right:20px; }
+  .hero-stats h3{ font-size:30px; margin:0 0 4px; color:var(--gold-soft); }
+  .hero-stats p{ margin:0; font-size:12.5px; color:rgba(247,241,228,.6); letter-spacing:.03em; }
 
-                <div class="form-group">
-                    <label for="client-phone">Telefon Raqamingiz:</label>
-                    <input type="tel" id="client-phone" placeholder="+998901234567" required>
-                </div>
+  .scrollcue{
+    position:absolute; left:6vw; bottom:34px; display:flex; align-items:center; gap:12px;
+    color:rgba(247,241,228,.55); font-size:12px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+  }
+  .scrollcue .line{ width:1px; height:38px; background:linear-gradient(var(--gold), transparent); position:relative; overflow:hidden;}
 
-                <div class="form-group">
-                    <label>Vaqtini tanlang:</label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="time-slot" value="Kunduzgi" checked> Kunduzgi (12:00 - 15:00)</label>
-                        <label><input type="radio" name="time-slot" value="Kechki"> Kechki (18:00 - 22:00)</label>
-                    </div>
-                </div>
+  /* ---------- section shell ---------- */
+  section{ padding:110px 6vw; position:relative; }
+  .section-head{ max-width:640px; margin-bottom:64px; }
+  .section-head h2{ font-size:clamp(30px,3.6vw,46px); margin:14px 0 0; line-height:1.15; font-weight:700; color:var(--ink); }
+  .section-head p{ margin-top:16px; color:#5a4a3a; line-height:1.75; font-size:15.5px; max-width:56ch; }
+  .divider-gold{ width:60px; height:2px; background:var(--gold); border-radius:2px; margin:6px 0 0; }
 
-                <div class="form-group">
-                    <label for="capacity">Mehmonlar soni (Joy sig‘imi):</label>
-                    <select id="capacity" required>
-                        <option value="" disabled selected>Tanlang...</option>
-                        <option value="150-200 kishi">150 - 200 kishilik zal</option>
-                        <option value="300-400 kishi">300 - 400 kishilik zal</option>
-                        <option value="500+ kishi">500+ kishilik keng zal</option>
-                    </select>
-                </div>
+  /* ---------- about section (Siz boshlagan joy) ---------- */
+  .about{ background:var(--cream-2); }
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+  }
+  .about-text h3{ font-size:28px; color:var(--forest); margin-bottom:15px; }
+  .about-text p{ font-size:16px; line-height:1.8; color:#4a3f35; margin-bottom:20px; }
+  .about-img img{ width:100%; border-radius:15px; box-shadow: var(--shadow); border: 2px solid var(--gold); }
 
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Buyurtma Berish</button>
-            </form>
-        </div>
-
-        <!-- 2. ADMIN PANEL SAHIFASI -->
-        <div id="admin-page" class="page">
-            <h2>Admin Panel (Boshqaruv)</h2>
-            <p style="margin-bottom: 15px;">Murojaat uchun Admin telfoni: <strong>+998945118008</strong></p>
-            
-            <div style="overflow-x: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Mijoz Ismi</th>
-                            <th>Sana</th>
-                            <th>Telefon</th>
-                            <th>Vaqti</th>
-                            <th>Sig‘imi</th>
-                        </tr>
-                    </thead>
-                    <tbody id="admin-table-body">
-                        <!-- Buyurtmalar shu yerga kelib tushadi -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        Bog‘lanish va Savollar uchun: <a href="tel:+998945118008">+998 94 511 80 08</a>
-    </footer>
-
-    <script>
-        // Sahifalarni almashtirish funksiyasi
-        function showPage(pageId) {
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            document.getElementById(pageId).classList.add('active');
-            
-            if(pageId === 'admin-page') {
-                loadAdminData();
-            }
-        }
-
-        // Buyurtmalarni saqlash va boshqarish
-        function handleBooking(event) {
-            event.preventDefault();
-
-            // Ma'lumotlarni yig'ish
-            const name = document.getElementById('client-name').value;
-            const date = document.getElementById('booking-date').value;
-            const phone = document.getElementById('client-phone').value;
-            const timeSlot = document.querySelector('input[name="time-slot"]:checked').value;
-            const capacity = document.getElementById('capacity').value;
-
-            const newBooking = { name, date, phone, timeSlot, capacity };
-
-            // LocalStorage'dan eski ma'lumotlarni olish yoki yangi massiv ochish
-            let bookings = JSON.parse(localStorage.getItem('toyXonaBookings')) || [];
-            bookings.push(newBooking);
-
-            // Ma'lumotni xotiraga saqlash
-            localStorage.setItem('toyXonaBookings', JSON.stringify(bookings));
-
-            // Formani tozalash va muvaffaqiyatli xabarni ko'rsatish
-            document.getElementById('booking-form').reset();
-            const alertBox = document.getElementById('success-alert');
-            alertBox.style.display = 'block';
-            
-            window.scrollTo({top: 0, behavior: 'smooth'});
-
-            setTimeout(() => {
-                alertBox.style.display = 'none';
-            }, 5000);
-        }
-
-        // Admin panelga ma'lumotlarni chiqarish
-        function loadAdminData() {
-            const tbody = document.getElementById('admin-table-body');
-            tbody.innerHTML = ''; // Jadvalni tozalash
-
-            const bookings = JSON.parse(localStorage.getItem('toyXonaBookings')) || [];
-
-            if(bookings.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;">Hozircha hech qanday buyurtma mavjud emas.</td></tr>`;
-                return;
-            }
-
-            bookings.forEach((item, index) => {
-                const row = `
-                    <tr>
-                        <td>${index + 1}</td>
+  /* ---------- booking form and admin panel layouts ---------- */
+  .booking-section {
+    background: var(--cream);
+  }
+  .booking-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+  }
+  .booking-form-container h3 {
+    font-size: 28px;
+    color: var(--forest);
+    margin-bottom: 25px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .form-group.full-width {
+    grid-column: span 2;
+  }
+  .form-group label {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--forest-2);
+  }
+  .form-group input, .form-group select {
+    padding: 14px 18px;
+    border: 1.5px solid var(--cream-2);
+    background: var(--cream);
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    transition: all 0.3s ease;
+  }
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: white;
+  }
+  .radio-tile-group {
+    display: flex;
+    gap: 15px;
+  }
+  .radio-tile {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    background: var(--cream);
+    border: 1.5px solid var(--cream-2);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .radio-tile input {
+    position: absolute;
+    opacity: 0;
+  }
+  .radio-tile.active-tile {
+    border-color: var(--gold);
+    background: var(--forest);
+    color: white;
+  }
+  .booking-info-box {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 35px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+      
